@@ -80,6 +80,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        missingDimensionStrategy 'react-native-camera', 'general'
     }
     signingConfigs {
         debug {
@@ -105,10 +106,11 @@ android {
 
 dependencies {
      implementation fileTree(dir: "libs", include: ["*.jar"])
+     implementation project(':react-native-screens')
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"  // From node_modules
+implementation project(':react-native-splash-screen')
 
-implementation project(':react-native-vector-icons')
     
 
     // The version of react-native is set by the React Native Gradle Plugin
@@ -128,8 +130,4 @@ implementation project(':react-native-vector-icons')
     }
 }
 
-project.ext.vectoricons = [
-        iconFontNames: [ 'FontAwesome.ttf', 'FontAwesome5_Regular.ttf',
-             'FontAwesome5_Solid.ttf', 'FontAwesome5_Brands.ttf'] // <-- add this line (1/2)
-]
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
