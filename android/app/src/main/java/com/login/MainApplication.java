@@ -11,6 +11,7 @@ import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -22,9 +23,13 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected List<ReactPackage> getPackages() {
-          return Arrays.<ReactPackage>asList(
+          return Arrays.asList(
             new MainReactPackage(),
-            new com.swmansion.rnscreens.RNScreensPackage()
+            new com.swmansion.reanimated.ReanimatedPackage(),
+            new com.swmansion.gesturehandler.RNGestureHandlerPackage(),
+            new com.swmansion.rnscreens.RNScreensPackage(),
+            new com.th3rdwave.safeareacontext.SafeAreaContextPackage(),
+            new SplashScreenReactPackage() // Add this line to include SplashScreen package
           );
         }
 
